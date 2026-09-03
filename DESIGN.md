@@ -4,27 +4,41 @@
 > Frameworks: None detected
 > Colors: 13 · Fonts: 2 · Components: 0
 > Icon library: not detected · State: not detected
-> Primary theme: dark · Dark mode toggle: no · Motion: none
+> Primary theme: light · Dark mode toggle: yes · Motion: none
 
 ## Visual Theme & Atmosphere
 
-Dark-themed interface with a cool tone. Depth is expressed through layered shadows and subtle surface colour variation. The implementation resolves the source specification's typography inconsistency in favour of the repeated rule: **Jost for display/headings and Arial for body/UI text**. Spacing follows a 5px base grid.
+Light mode is the default interface, with the original cool dark theme available through a persistent header toggle. Depth is expressed through layered shadows and subtle surface colour variation. The implementation resolves the source specification's typography inconsistency in favour of the repeated rule: **Jost for display/headings and Arial for body/UI text**. Spacing follows a 5px base grid.
 
 ## Colour Palette
+
+### Light mode — default
+
+- background `#ededed`
+- surface `#ffffff`
+- text-primary `#121212`
+- text-secondary `#32373c`
+- text-muted `#566e8b`
+- border `#d2d4d1`
+- accent `#24cc8f`
+- success `#00b682`
+- warning `#ab641d`
+- info `#528ffe`
+
+### Dark mode
 
 - background `#2b2b2b`
 - surface `#000000`
 - text-primary `#ffffff`
+- text-secondary `#d2d4d1`
 - text-muted `#566e8b`
 - border `#595959`
 - accent `#24cc8f`
 - success `#00b682`
 - warning `#fcaf3b`
 - info `#528ffe`
-- near-black `#121212`
-- light `#ededed`
-- charcoal `#32373c`
-- soft `#d2d4d1`
+- header/subtle surface `#121212`
+- chip surface `#32373c`
 
 ## Typography
 
@@ -40,12 +54,13 @@ Dark-themed interface with a cool tone. Depth is expressed through layered shado
 
 - Max width: 1280px
 - Base grid: 5px
-- Card surface: `#000000`
-- Card border: 1px solid `#595959`
+- Card surface: `#ffffff` in light mode / `#000000` in dark mode
+- Card border: 1px solid `#d2d4d1` in light mode / `#595959` in dark mode
 - Card radius: 7px
 - Card padding: 20–25px
 - Primary button: `#24cc8f`, black text, 10px 20px padding, 7px radius
 - Focus ring: 2px `#24cc8f`
+- Theme toggle: persistent light/dark control in the header; light mode is the first-visit default
 - No gradients, blur or backdrop blur
 
 ## Elevation
