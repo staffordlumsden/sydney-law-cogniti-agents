@@ -3,24 +3,83 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#2b2b2b">
+<meta name="theme-color" id="theme-color" content="#ededed"><script>
+try {
+  if (localStorage.getItem("cogniti-theme") === "dark") {
+    document.documentElement.dataset.theme = "dark";
+  }
+} catch (e) {}
+</script>
 <title>Create legal problem scenarios · Sydney Law School Cogniti</title>
 <style>
-:root{--background:#2b2b2b;--surface:#000;--text:#fff;--muted:#d2d4d1;--border:#595959;--accent:#24cc8f;--warning:#fcaf3b;--near:#121212;--charcoal:#32373c;}
-*{box-sizing:border-box} body{margin:0;background:var(--background);color:var(--text);font-family:Arial,Helvetica,sans-serif;line-height:1.6}
-header{background:var(--near);border-bottom:1px solid var(--border)} .bar{max-width:1100px;margin:auto;padding:20px 25px;display:flex;gap:20px;align-items:center;justify-content:space-between}
-a{color:var(--accent)} .back{font-weight:700;text-decoration:none}.back:hover{text-decoration:underline}
+:root{
+  color-scheme:light;
+  --background:#ededed;
+  --surface:#ffffff;
+  --text:#121212;
+  --muted:#32373c;
+  --border:#d2d4d1;
+  --accent:#24cc8f;
+  --accent-text:#566e8b;
+  --warning:#ab641d;
+  --header:#ffffff;
+  --subtle:#ededed;
+  --code:#ededed;
+}
+html[data-theme="dark"]{
+  color-scheme:dark;
+  --background:#2b2b2b;
+  --surface:#000000;
+  --text:#ffffff;
+  --muted:#d2d4d1;
+  --border:#595959;
+  --accent:#24cc8f;
+  --accent-text:#24cc8f;
+  --warning:#fcaf3b;
+  --header:#121212;
+  --subtle:#121212;
+  --code:#121212;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--background);color:var(--text);font-family:Arial,Helvetica,sans-serif;line-height:1.6}
+header{background:var(--header);border-bottom:1px solid var(--border)}
+.bar{max-width:1100px;margin:auto;padding:15px 25px;display:flex;gap:20px;align-items:center;justify-content:space-between;flex-wrap:wrap}
+.header-actions{display:flex;align-items:center;gap:15px;flex-wrap:wrap}
+a{color:var(--accent-text)}
+.back{font-weight:700;text-decoration:none}
+.back:hover{text-decoration:underline}
+.theme-toggle{display:inline-flex;align-items:center;gap:8px;min-height:38px;padding:5px 15px;border:1px solid var(--border);border-radius:50px;background:var(--surface);color:var(--text);font:inherit;font-weight:700;cursor:pointer}
+.theme-toggle:hover{border-color:var(--accent)}
+.theme-toggle-icon{color:var(--accent-text)}
+a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
 main{max-width:950px;margin:auto;padding:40px 25px 70px;background:var(--surface);min-height:100vh;border-left:1px solid var(--border);border-right:1px solid var(--border)}
-h1,h2,h3{font-family:"Jost",Arial,sans-serif;line-height:1.2} h1{font-size:3rem;margin:0 0 25px} h2{font-size:2rem;margin:45px 0 15px;border-top:1px solid var(--border);padding-top:25px} h3{font-size:1.35rem;margin:30px 0 10px}
-p,li{color:var(--muted)} strong{color:var(--text)} blockquote{margin:20px 0;padding:15px 20px;border-left:5px solid var(--warning);background:var(--near)}
-code{background:var(--charcoal);padding:2px 5px;border-radius:3px;color:var(--text)} pre{overflow:auto;background:var(--near);border:1px solid var(--border);padding:20px;border-radius:7px} pre code{background:transparent;padding:0}
-.table-wrap{overflow-x:auto;margin:20px 0} table{border-collapse:collapse;width:100%} th,td{border:1px solid var(--border);padding:10px 12px;text-align:left;vertical-align:top} th{background:var(--charcoal);color:var(--text)} td{color:var(--muted)}
+h1,h2,h3{line-height:1.2}
+h1{font-size:3rem;margin:0 0 25px}
+h2{font-size:2rem;margin:45px 0 15px;border-top:1px solid var(--border);padding-top:25px}
+h3{font-size:1.35rem;margin:30px 0 10px}
+p,li{color:var(--muted)}
+strong{color:var(--text)}
+blockquote{margin:20px 0;padding:15px 20px;border-left:5px solid var(--warning);background:var(--subtle)}
+code{background:var(--code);padding:2px 5px;border-radius:3px;color:var(--text)}
+pre{overflow:auto;background:var(--subtle);border:1px solid var(--border);padding:20px;border-radius:7px}
+pre code{background:transparent;padding:0}
+.table-wrap{overflow-x:auto;margin:20px 0}
+table{border-collapse:collapse;width:100%}
+th,td{border:1px solid var(--border);padding:10px 12px;text-align:left;vertical-align:top}
+th{background:var(--subtle);color:var(--text)}
+td{color:var(--muted)}
 footer{max-width:950px;margin:auto;padding:20px 25px;color:#566e8b;font-size:.875rem}
-@media(max-width:650px){h1{font-size:2.2rem}h2{font-size:1.6rem}main{padding:30px 20px 50px;border:0}.bar{padding:15px 20px}}
+@media(max-width:650px){
+  h1{font-size:2.2rem}
+  h2{font-size:1.6rem}
+  main{padding:30px 20px 50px;border:0}
+  .bar{padding:15px 20px;align-items:flex-start}
+  .header-actions{width:100%;justify-content:space-between}
+}
 </style>
 </head>
 <body>
-<header><div class="bar"><a class="back" href="../index.html">← Cogniti Agent Hub</a><span>Sydney Law School · Educational Design</span></div></header>
+<header><div class="bar"><a class="back" href="../index.html">← Cogniti Agent Hub</a><div class="header-actions"><span>Sydney Law School · Educational Design</span><button class="theme-toggle" id="theme-toggle" type="button" aria-pressed="false" aria-label="Switch to dark mode"><span class="theme-toggle-icon" id="theme-icon" aria-hidden="true">☾</span><span id="theme-label">Dark mode</span></button></div></div></header>
 <main><h1>Create Legal Problem Scenarios with ChatGPT 5.4 for Sydney Law School</h1>
 <p>Hypothetical scenarios are central to legal problem-solving activities. This guide updates the supplied ChatGPT4o/o3-mini workflow for the current <strong>ChatGPT 5.4 for Sydney Law School</strong> agent.</p>
 <h2>Step 1: State the purpose</h2>
@@ -75,5 +134,38 @@ After the scenario, include one or two questions asking students to identify or 
 <h2>Review before use</h2>
 <p>Check the generated scenario for doctrinal accuracy, realism, unintended ambiguity, unnecessary factual cues and alignment with the intended learning outcome. Verify any embedded legal propositions against authoritative sources.</p></main>
 <footer>Local repository resource · no external documentation required</footer>
-</body>
+<script>
+(function () {
+  const root = document.documentElement;
+  const toggle = document.getElementById("theme-toggle");
+  const label = document.getElementById("theme-label");
+  const icon = document.getElementById("theme-icon");
+  const themeColour = document.getElementById("theme-color");
+
+  function currentTheme() {
+    return root.dataset.theme === "dark" ? "dark" : "light";
+  }
+
+  function applyTheme(theme, persist) {
+    if (theme === "dark") root.dataset.theme = "dark";
+    else delete root.dataset.theme;
+
+    const dark = theme === "dark";
+    toggle.setAttribute("aria-pressed", String(dark));
+    toggle.setAttribute("aria-label", dark ? "Switch to light mode" : "Switch to dark mode");
+    label.textContent = dark ? "Light mode" : "Dark mode";
+    icon.textContent = dark ? "☀" : "☾";
+    if (themeColour) themeColour.setAttribute("content", dark ? "#2b2b2b" : "#ededed");
+
+    if (persist) {
+      try { localStorage.setItem("cogniti-theme", theme); } catch (e) {}
+    }
+  }
+
+  applyTheme(currentTheme(), false);
+  toggle.addEventListener("click", function () {
+    applyTheme(currentTheme() === "dark" ? "light" : "dark", true);
+  });
+}());
+</script></body>
 </html>
