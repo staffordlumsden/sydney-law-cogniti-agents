@@ -1,127 +1,96 @@
 # Unit Outline Helper
 
-## **Welcome to the LAW Unit Outline Helper!**
+**Current iteration:** Unit Outline Helper v1.2_29042025  
+**Audience:** Sydney Law School academic and professional staff  
+**Platform:** Cogniti
 
-[LAW Unit Outline Helper](https://app.cogniti.ai/agents/67f70e091c9e6dbda3bff188/chat?k=mOeUxp0d-QwaXfagYEyuqWAgu6ZqF4NJyDWMoFuuBV8) is an AI Agent built in Cogniti and based on ChatGPT4o. 
+The supplied 2025 guide identified an earlier ChatGPT4o configuration. The current resource does not hard-code an underlying model because the current model configuration is not stated in the supplied materials. The tool itself remains **Unit Outline Helper**.
 
-<aside>
-<img src="https://app.notion.com/icons/bookmark-outline_lightgray.svg" alt="https://app.notion.com/icons/bookmark-outline_lightgray.svg" width="40px" />
+## What Unit Outline Helper can do
 
-**This Page**
+The agent can:
 
-[❓ What Can Unit Outline Helper Do?](https://app.notion.com/p/What-Can-Unit-Outline-Helper-Do-212cd88f5bfd80eb88adda545b938dc0?pvs=21) 
+1. draft or revise **Unit Learning Outcomes (ULOs)**;
+2. draft or revise an **assessment summary** for Sydney Curriculum (AKARI);
+3. extract relevant ULO or assessment information from existing text;
+4. analyse ULOs against:
+   - Course Learning Outcomes (CLOs);
+   - Sydney University Graduate Qualities;
+   - Australian Qualifications Framework expectations, especially Level 9 where relevant; and
+   - Council of Australian Law Deans Threshold Learning Outcomes for the LLB and JD; and
+5. analyse alignment between assessments and ULOs.
 
-[🔰 Get Started](https://app.notion.com/p/Get-Started-212cd88f5bfd80d2b752f66b825205c6?pvs=21) 
+You can work through these tasks individually or ask the agent to combine them.
 
-[📄 Extracting Information from Existing Text](https://app.notion.com/p/Extracting-Information-from-Existing-Text-212cd88f5bfd808e9373eab799b17667?pvs=21) 
+## Getting started
 
-[🚀 Skip everything. Jump Straight in.](https://app.notion.com/p/Skip-everything-Jump-Straight-in-212cd88f5bfd80e0bf2be7fbb2ea6cc2?pvs=21) 
+The agent may begin by asking which task you want to complete:
 
-[Extra: Constructive alignment](https://app.notion.com/p/Extra-Constructive-alignment-212cd88f5bfd800187c8e9a90bc9ac2a?pvs=21) 
+1. Write new ULOs.
+2. Write a new assessment summary.
+3. Write both ULOs and an assessment summary.
+4. Extract ULO information from existing text and create new ULOs.
+5. Extract assessment information from existing text and create an assessment summary.
 
-[](https://app.notion.com/p/212cd88f5bfd80dfbb18cd005202363c?pvs=21) [Curriculum Component Mapping Methodology](https://app.notion.com/p/Unit-Outline-Helper-212cd88f5bfd80a3a28df882341174cb?pvs=21)
+You can reply with the relevant number or describe the task directly.
 
-</aside>
+## Using existing unit material
 
-### ❓ What Can Unit Outline Helper Do?
+You can paste existing material from a unit outline, handbook entry or curriculum document into the agent and ask it to extract and reorganise the information.
 
-The agent is designed to do two things:
+A direct prompt can be as simple as:
 
-1. Help you (re)write unit learning outcomes ULOs) for a unit of study
-2. Help you (re)write an assessment summary for a unit outline in Sydney Curriculum (Akari).
-3. Analyse ULOs and evaluate the extent to which they address or are consistent with
-    1. Course Learning Outcomes (CLOs)
-    2. Sydney University Graduate Qualities
-    3. Australian Qualifications Framework (especially level 9)
-    4. Council of Australian Law Deans (CALD) Threshold Learning Outcomes (TLOs)
-        1. Bachelor of Laws
-        2. Juris Doctor
+```
+Analyse the following text:
 
-You can either work through each of these with the agent, or you can ask it to combine steps and analyses as needed. 
+"""
+[paste the existing ULOs, assessment summary or unit material here]
+"""
 
-### 🔰 Get Started
+Create a new set of Unit Learning Outcomes in the required format.
+```
 
-The agent will first ask you what you would like to do:
+For an assessment summary, replace the final instruction with:
 
-<aside>
-<img src="notion://custom_emoji/73f0eb6a-8f02-4281-8295-a2b1c3f67a76/212cd88f-5bfd-80ab-8e5f-007aa1785985" alt="notion://custom_emoji/73f0eb6a-8f02-4281-8295-a2b1c3f67a76/212cd88f-5bfd-80ab-8e5f-007aa1785985" width="40px" />
+```
+Create a new assessment summary in the required format.
+```
 
-`I'd be happy to help you create your unit outline. Could you please clarify which of the following tasks you’d like to work on today?`
+In this context, **required format** means the output format configured for the agent. Staff should still check that the result satisfies current University curriculum requirements.
 
-1. `Write new Unit Learning Outcomes (ULOs)`
-2. `Write a new assessment summary for a unit outline`
-3. `Both Unit Learning Outcomes and an assessment summary`
-4. `Extract Unit Learning Outcome (ULO) information from existing text and create new ones`
-5. `Extract assessment information from existing text and create an Assessment Summary`
+## Checking constructive alignment
 
-`Please let me know which option you would like to proceed with, or if you have any specific requirements or questions.`
+After drafting ULOs and an assessment summary, ask:
 
-</aside>
+```
+Create a matrix showing the alignment between ULOs and assessments in this unit.
+```
 
-In the chat, type your selection (just use numbers 1-5, no need to type a prompt) to get started.
+The supplied methodology uses a 0–2 scale:
 
-### 📄 Extracting Information from Existing Text
+- **0** = ULO not addressed;
+- **1** = ULO partially addressed;
+- **2** = ULO addressed.
 
-You can also provide the agent with existing text (#5) and have it find the information it needs to either rewrite ULOs or create an assessment summary:
+The analysis considers the unit title, description, ULOs and assessment summary to evaluate the extent to which the assessment design gives students opportunities to demonstrate the intended outcomes.
 
-1. Find the relevant unit of study in the [Law Handbook](https://www.sydney.edu.au/handbooks/law.html)
-- Open a previous year's unit outline
-- Either select specific text from the outline or use `ctrl+a` [select all] `ctrl +c` [copy] and `ctrl +v` [paste] into the agent's chatbox and it will take care of the rest.
+## Broader curriculum mapping
 
-### 🚀 Skip everything. Jump Straight in.
+The supplied curriculum-mapping methodology extends the analysis by considering:
 
-You needn't go through the steps above every time you want to update your ULOs and/or assessment summary. Unit Outline Helper is ChatGPT in most ways. Instead of making a selection between 1 and 5 (see above) Try a prompt like this:
+- the purpose and nature of each assessment;
+- expected student outputs;
+- formative/summative and individual/collaborative characteristics;
+- correspondence between assessment demands and ULO verbs;
+- full or partial coverage of each ULO;
+- gaps or over-concentration across the assessment suite;
+- assessment weighting where appropriate; and
+- consistency with relevant educational and professional frameworks.
 
-`Analyse the following text.
-"""`
-*[copy and paste yout ULOs/Assessment summary here]*
-`"""
-Create a new set of unti learning outcomes in the required format.`
+The detailed methodology is reproduced in `resources/curriculum-mapping-methodologies.md` and on the main GitHub Pages site.
 
-<aside>
-⚠️
+## Human review
 
-**Note** - when we use "*required format*" we are talking about the format the AI has been told it is required to output. 
+Generated ULOs, assessment summaries and mapping judgements are draft curriculum-development artefacts. They should be checked against current University curriculum requirements, the actual design of the unit and any relevant course or accreditation requirements.
 
-</aside>
-
-For your assessment summary, substitute `Create a new set of unti learning outcomes in the required format` with `Create a new assessment summary in the required format`.
-
-### Extra: Constructive alignment
-
-Having written new unit learning outcomes and created a new assessment summary for your outline, you might want to double check the alignment between assessments and ULOs. To do that, use the following prompt:
-
-`Create a matrix showing the alignment between ULOs and assessments in this unit.`
-
-The agent will evaluate how well the assessments address each of your ULOs on a 0 - 2 scale:
-
-<aside>
-<img src="notion://custom_emoji/73f0eb6a-8f02-4281-8295-a2b1c3f67a76/212cd88f-5bfd-80ab-8e5f-007aa1785985" alt="notion://custom_emoji/73f0eb6a-8f02-4281-8295-a2b1c3f67a76/212cd88f-5bfd-80ab-8e5f-007aa1785985" width="40px" />
-
-`0 = not addressed`
-
-`1 = ULO is partially addressed`
-
-`2 = ULO is addressed.`
-
-</aside>
-
-ChatGPT uses content analysis of the unit title, description, ULOs, and assessment summary to evaluate constructive alignment between outcomes and how well students are likely to be able to demonstrate they've fulfilled them based on its knowledge of assessment pedagogy and constructive alignment ([specifically Biggs and Tang, 2007](https://cetl.ppu.edu/sites/default/files/publications/-John_Biggs_and_Catherine_Tang-_Teaching_for_Quali-BookFiorg-.pdf)).
-
-<aside>
-<img src="https://app.notion.com/icons/info-alternate_blue.svg" alt="https://app.notion.com/icons/info-alternate_blue.svg" width="40px" />
-
-### Curriculum Component Mapping Methodology
-
-For more information on how the agent maps curriculum components see the following document:
-
-[Curriculum Mapping Methodologies.pdf](Unit%20Outline%20Helper/Curriculum_Mapping_Methodologies.pdf)
-
-</aside>
-
-<aside>
-<img src="notion://custom_emoji/73f0eb6a-8f02-4281-8295-a2b1c3f67a76/1d0cd88f-5bfd-80da-acb0-007a5c05eebb" alt="notion://custom_emoji/73f0eb6a-8f02-4281-8295-a2b1c3f67a76/1d0cd88f-5bfd-80da-acb0-007a5c05eebb" width="40px" />
-
-Need help with prompts or examples? Contact [**Law Education Design](mailto:stafford.lumsden@sydney.edu.au).**
-
-</aside>
+Do not enter personal, protected or highly protected data where the model is not deployed in an Australian geographic region.
