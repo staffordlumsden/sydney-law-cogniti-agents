@@ -1,36 +1,55 @@
-# Welcome to LexiDraft
+# LexiDraft: Legal Writing Resources
 
-> Web-readable extract of the supplied *Welcome to LexiDraft: Legal Writing Resources* PDF.
+**Current iteration:** LexiDraft v1.1_09052025 [Experimental]  
+**Audience:** Honours and selected capstone students  
+**Purpose:** legal-writing feedback and revision
 
-<PARSED TEXT FOR PAGE: 1 / 4>Welcome to LexiDraft
-What is LexiDraft?
-LexiDraft is an AI writing assistant being piloted in
-Honours and selected capstone units.
-LexiDraft is an AI chatbot designed to support, not
-replace, your legal writing. It’s like having a high-level
-editor who specialises in Australian legal education,
-academic writing, and the expectations of senior law
-students. Here’s how to use it effectively (and what it
-can’t do).
-On this page
-What LexiDraft Can Do
-What LexiDraft Can't Do
-How to get the best response
-LexiDraft x Student Experience
-Chat with LexiDraft here:
-✅ What LexiDraft Can Do
-When you paste your own legal writing into the chat (e.g. a paragraph from an essay, memo,
-or case note), the AI will help you refine and improve it in five structured ways:
-1. Critical Assessment
-Evaluates whether your writing answers the question clearly and legally.
-Checks for correct use of legal authority (cases, legislation, scholarly sources).
-Identifies logical gaps, vague analysis, or weak application of doctrine.
-.cogniti.ai/agents/67ea59
-zehcImnvusiIEbp7471rEK
-9/3/26, 12:29 PM Welcome to LexiDraft: Legal Writing Resources
-https://canvas.sydney.edu.au/courses/11474/pages/welcome-to-lexidraft?module_item_id=2681568 1/4<PARSED TEXT FOR PAGE: 2 / 4>9/3/26, 12:29 PM Welcome to LexiDraft: Legal Writing Resources
-https://canvas.sydney.edu.au/courses/11474/pages/welcome-to-lexidraft?module_item_id=2681568 2/4<PARSED TEXT FOR PAGE: 3 / 4>9/3/26, 12:29 PM Welcome to LexiDraft: Legal Writing Resources
-https://canvas.sydney.edu.au/courses/11474/pages/welcome-to-lexidraft?module_item_id=2681568 3/4<PARSED TEXT FOR PAGE: 4 / 4>9/3/26, 12:29 PM Welcome to LexiDraft: Legal Writing Resources
-https://canvas.sydney.edu.au/courses/11474/pages/welcome-to-lexidraft?module_item_id=2681568 4/4
+LexiDraft is designed to **support, not replace, students' legal writing**. The supplied resource describes it as a high-level editor for advanced legal writing in the context of Australian legal education.
 
-For the current University-hosted guide, use the Canvas support page linked in the source material.
+## What LexiDraft can do
+
+When a student provides their own writing — for example, a paragraph from an essay, memorandum or case note — LexiDraft can support revision by:
+
+- evaluating whether the writing addresses the question clearly and legally;
+- checking the use of legal authority in the writing supplied;
+- identifying logical gaps, vague analysis or weak application of doctrine;
+- reviewing structure and coherence;
+- helping refine academic tone and expression; and
+- prompting the student to strengthen reasoning, clarity and referencing.
+
+The purpose is formative: LexiDraft should help the student see how their own writing could be improved.
+
+## What LexiDraft is not for
+
+LexiDraft is not intended to write an assessment for the student or replace the student's legal analysis. The analysis, decisions and final text remain the student's responsibility.
+
+Students should not rely on the tool as an authoritative source of law. Any suggestion about cases, legislation, scholarly sources or legal propositions should be checked against the relevant authoritative source.
+
+## Getting a useful response
+
+For the best feedback:
+
+1. paste a manageable section of your own writing;
+2. explain the assessment type and relevant context;
+3. identify what you want feedback on — for example, legal reasoning, structure, clarity, use of authority or academic tone;
+4. ask the agent to diagnose weaknesses before suggesting revisions; and
+5. decide which suggestions to adopt rather than accepting revisions automatically.
+
+Example:
+
+```
+This paragraph is from a postgraduate law essay. Please review it as a legal-writing editor.
+
+Focus on:
+- whether the paragraph advances a clear proposition;
+- the quality of the legal reasoning;
+- whether the use of authority is clear;
+- coherence between sentences; and
+- academic tone.
+
+Do not rewrite the paragraph for me. Identify the main problems and explain how I could improve them.
+```
+
+## Data and verification
+
+Do not enter personal, protected or highly protected data where the model is not deployed in an Australian geographic region. Students remain responsible for checking legal authorities, citations and the accuracy of the final submitted work.
