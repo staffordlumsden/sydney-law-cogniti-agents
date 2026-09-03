@@ -25,7 +25,6 @@ All supporting guidance is stored within this repository and has a matching web-
 - `resources/unit-outline-helper.html`
 - `resources/curriculum-mapping-methodologies.html`
 - `resources/ai-student-support-chatbot.html`
-- `resources/overview.html`
 
 Markdown source versions are stored alongside the HTML pages so the guidance is readable directly in GitHub as well as on GitHub Pages.
 
@@ -38,6 +37,10 @@ The supplied Unit Outline Helper guide also identified an earlier ChatGPT4o conf
 ## External-link policy
 
 Documentation and supporting resources do not depend on Notion, Canvas, SharePoint or other external resource pages. The only outbound links intentionally retained on the main site are links that **launch the actual Cogniti tools** (and the Student Support chatbot), rather than links to supporting documentation.
+
+## Theme
+
+The site uses **light mode by default** with an accessible light/dark toggle in the header. A user-selected theme is persisted locally in the browser and is shared across the hub and local resource pages.
 
 ## Site structure
 
