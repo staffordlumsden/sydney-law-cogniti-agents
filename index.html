@@ -1,0 +1,522 @@
+<!doctype html>
+<html lang="en-AU">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Sydney Law School Cogniti agents and practical resources for legal education.">
+  <meta name="theme-color" content="#2b2b2b">
+  <title>Sydney Law School · Cogniti Agent Hub</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Jost:wght@500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --background: #2b2b2b;
+      --surface: #000000;
+      --text-primary: #ffffff;
+      --text-muted: #566e8b;
+      --border: #595959;
+      --accent: #24cc8f;
+      --success: #00b682;
+      --warning: #fcaf3b;
+      --info: #528ffe;
+      --near-black: #121212;
+      --light: #ededed;
+      --charcoal: #32373c;
+      --soft: #d2d4d1;
+      --shadow-raised: rgba(0, 0, 0, 0.1) 0px 3px 6px -5px, rgba(0, 0, 0, 0.1) 0px 4px 8px 0px;
+      --shadow-top: rgba(0, 0, 0, 0.1) 0px -1px 3px 0px;
+      --shadow-overlay: rgba(40, 47, 98, 0.08) 0px 10px 100px 0px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: auto; }
+    body {
+      margin: 0;
+      background: var(--background);
+      color: var(--text-primary);
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 16px;
+      line-height: 1.5;
+    }
+
+    a { color: var(--accent); }
+    a:focus-visible, button:focus-visible, summary:focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 3px;
+    }
+
+    h1, h2, h3, .brand, .eyebrow, .button, .tag {
+      font-family: "Jost", Arial, sans-serif;
+    }
+
+    h1, h2, h3 { margin-top: 0; line-height: 1.2; }
+    h1 { font-size: 3rem; font-weight: 700; margin-bottom: 20px; }
+    h2 { font-size: 2rem; font-weight: 600; margin-bottom: 20px; }
+    h3 { font-size: 1.5rem; font-weight: 600; margin-bottom: 10px; }
+    p { margin: 0 0 15px; }
+
+    .skip-link {
+      position: absolute;
+      left: 10px;
+      top: -60px;
+      background: var(--accent);
+      color: #000;
+      padding: 10px 20px;
+      z-index: 10;
+      border-radius: 7px;
+      font-weight: 700;
+    }
+    .skip-link:focus { top: 10px; }
+
+    .site-header {
+      border-bottom: 1px solid var(--border);
+      background: var(--near-black);
+      box-shadow: var(--shadow-top);
+    }
+    .header-inner {
+      max-width: 1280px;
+      margin: 0 auto;
+      min-height: 70px;
+      padding: 15px 25px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+    .brand {
+      color: var(--text-primary);
+      text-decoration: none;
+      font-weight: 700;
+      letter-spacing: .01em;
+    }
+    .brand span { color: var(--accent); }
+    .nav { display: flex; flex-wrap: wrap; gap: 20px; }
+    .nav a { color: var(--light); text-decoration: none; font-weight: 700; }
+    .nav a:hover { color: var(--accent); }
+
+    main { max-width: 1280px; margin: 0 auto; padding: 50px 25px 60px; }
+
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 1.5fr) minmax(280px, .7fr);
+      gap: 40px;
+      align-items: end;
+      padding: 40px 0 60px;
+    }
+    .eyebrow {
+      display: inline-block;
+      margin-bottom: 15px;
+      color: var(--accent);
+      font-size: .75rem;
+      font-weight: 700;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+    .hero-copy { max-width: 800px; font-size: 1.125rem; color: var(--light); }
+    .hero-panel {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 7px;
+      padding: 20px;
+      box-shadow: var(--shadow-raised);
+    }
+    .hero-panel strong { color: var(--warning); }
+    .meta { color: var(--text-muted); font-size: .75rem; margin: 0; }
+
+    .section { margin-top: 50px; }
+    .section-heading { max-width: 800px; margin-bottom: 25px; }
+    .section-heading p { color: var(--soft); }
+
+    .agent-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 20px;
+    }
+    .agent-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 7px;
+      overflow: hidden;
+      box-shadow: var(--shadow-raised);
+      display: flex;
+      flex-direction: column;
+    }
+    .agent-card img {
+      display: block;
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
+      background: var(--light);
+      border-bottom: 1px solid var(--border);
+    }
+    .card-body { padding: 20px; display: flex; flex-direction: column; flex: 1; }
+    .tag-row { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 15px; }
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      min-height: 30px;
+      padding: 5px 10px;
+      border: 1px solid var(--border);
+      border-radius: 50px;
+      font-size: .75rem;
+      font-weight: 700;
+      color: var(--soft);
+      background: var(--charcoal);
+    }
+    .tag.accent { border-color: var(--accent); color: var(--accent); background: var(--near-black); }
+    .card-body p { color: var(--soft); }
+    .card-actions { margin-top: auto; padding-top: 10px; display: flex; flex-wrap: wrap; gap: 10px; }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 45px;
+      padding: 10px 20px;
+      border: 1px solid var(--accent);
+      border-radius: 7px;
+      background: var(--accent);
+      color: #000;
+      text-decoration: none;
+      font-weight: 700;
+    }
+    .button:hover { opacity: .9; }
+    .button.ghost { background: transparent; color: var(--accent); border-color: var(--border); }
+    .button.ghost:hover { border-color: var(--accent); opacity: 1; }
+
+    .detail-grid { display: grid; gap: 20px; }
+    .detail-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 7px;
+      padding: 25px;
+      box-shadow: var(--shadow-raised);
+    }
+    .detail-layout {
+      display: grid;
+      grid-template-columns: 220px minmax(0, 1fr);
+      gap: 25px;
+      align-items: start;
+    }
+    .detail-layout img {
+      width: 100%;
+      border-radius: 7px;
+      border: 1px solid var(--border);
+      background: var(--light);
+    }
+    .lead { color: var(--light); font-size: 1.1rem; }
+    .feature-list { padding-left: 20px; margin: 15px 0 20px; }
+    .feature-list li { margin-bottom: 5px; }
+
+    .notice {
+      margin-top: 20px;
+      padding: 15px 20px;
+      border-left: 5px solid var(--warning);
+      background: var(--near-black);
+      color: var(--light);
+    }
+    .notice.info { border-left-color: var(--info); }
+    .notice.success { border-left-color: var(--success); }
+
+    .resource-list {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px;
+      margin-top: 20px;
+    }
+    .resource-link {
+      display: block;
+      padding: 15px;
+      border: 1px solid var(--border);
+      border-radius: 7px;
+      background: var(--background);
+      color: var(--text-primary);
+      text-decoration: none;
+    }
+    .resource-link:hover { border-color: var(--accent); }
+    .resource-link strong { display: block; color: var(--accent); margin-bottom: 5px; }
+    .resource-link span { display: block; color: var(--soft); font-size: .875rem; }
+
+    details {
+      margin-top: 20px;
+      border: 1px solid var(--border);
+      border-radius: 7px;
+      background: var(--background);
+    }
+    summary {
+      cursor: pointer;
+      padding: 15px 20px;
+      color: var(--accent);
+      font-weight: 700;
+    }
+    .details-inner { padding: 0 20px 20px; color: var(--light); }
+    code {
+      background: var(--near-black);
+      border: 1px solid var(--border);
+      border-radius: 3px;
+      padding: 2px 5px;
+      color: var(--light);
+    }
+
+    .support-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 7px;
+      padding: 25px;
+      box-shadow: var(--shadow-raised);
+    }
+
+    footer {
+      border-top: 1px solid var(--border);
+      background: var(--near-black);
+    }
+    .footer-inner {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 25px;
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+      color: var(--text-muted);
+      font-size: .875rem;
+    }
+    .footer-inner a { color: var(--accent); }
+
+    @media (max-width: 900px) {
+      .hero { grid-template-columns: 1fr; }
+      .agent-grid { grid-template-columns: 1fr 1fr; }
+      .detail-layout { grid-template-columns: 170px minmax(0, 1fr); }
+    }
+    @media (max-width: 650px) {
+      h1 { font-size: 2.35rem; }
+      h2 { font-size: 1.75rem; }
+      main { padding: 30px 20px 50px; }
+      .header-inner { padding: 15px 20px; align-items: flex-start; flex-direction: column; }
+      .nav { gap: 15px; }
+      .hero { padding: 25px 0 40px; }
+      .agent-grid, .resource-list, .detail-layout { grid-template-columns: 1fr; }
+      .detail-layout img { max-width: 220px; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="#top">Sydney Law School <span>· Cogniti</span></a>
+      <nav class="nav" aria-label="Primary navigation">
+        <a href="#agents">Agents</a>
+        <a href="#resources">Resources</a>
+        <a href="#support">Student support</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero" id="top">
+      <div>
+        <span class="eyebrow">Sydney Law School · Educational Design</span>
+        <h1>Cogniti agents for legal education</h1>
+        <p class="hero-copy">Purpose-built AI tools and practical resources for Sydney Law School academics. Use this hub to launch an agent, understand what it is designed to do, and access the accompanying guides and examples.</p>
+      </div>
+      <aside class="hero-panel" aria-label="Important use note">
+        <p><strong>Use professional judgement.</strong> These tools augment human-led teaching, curriculum design and student support. Review outputs before using or sharing them.</p>
+        <p class="meta">Current hub: 3 September 2026</p>
+      </aside>
+    </section>
+
+    <section class="section" id="agents">
+      <div class="section-heading">
+        <span class="eyebrow">Choose an agent</span>
+        <h2>Three tools, three distinct jobs</h2>
+        <p>Each agent is configured for a particular educational purpose. Start with the task you need to complete rather than the model name.</p>
+      </div>
+
+      <div class="agent-grid">
+        <article class="agent-card">
+          <img src="assets/lexidraft.webp" alt="LexiDraft illustrated logo: a barrister-like figure with a fountain-pen nib hat.">
+          <div class="card-body">
+            <div class="tag-row"><span class="tag accent">Student-facing</span><span class="tag">Legal writing</span></div>
+            <h3>LexiDraft</h3>
+            <p>A specialist feedback and revision assistant for advanced legal writing, piloted in Honours and selected capstone units. It is designed to support students' own analysis and writing rather than replace it.</p>
+            <div class="card-actions">
+              <a class="button" href="https://app.cogniti.ai/agents/67ea5935cec5649fd916a975/chat?k=xaDzzehcImnvusiIEbp7471rEKbPe32mq2mkxN1_NAk" target="_blank" rel="noopener">Launch LexiDraft</a>
+              <a class="button ghost" href="#lexidraft">View resources</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="agent-card">
+          <img src="assets/chatgpt5.webp" alt="ChatGPT5 for Sydney Law School illustrated logo: a barrister-like figure in green tones.">
+          <div class="card-body">
+            <div class="tag-row"><span class="tag accent">Academic staff</span><span class="tag">General purpose</span></div>
+            <h3>ChatGPT 5.4 for Sydney Law School</h3>
+            <p>A general-purpose Cogniti workspace for routine, low-risk legal education tasks such as drafting rubrics, hypotheticals, formative activities, Canvas quiz material and instructional content.</p>
+            <div class="card-actions">
+              <a class="button" href="https://app.cogniti.ai/agents/67ff16c50feb13ccd1bf9b1b/chat?k=mj4Gac-BTNmFxSWjhh1blQuio2n4kp9XAIjL3RYNus8" target="_blank" rel="noopener">Launch ChatGPT 5.4</a>
+              <a class="button ghost" href="#chatgpt">View resources</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="agent-card">
+          <img src="assets/unit-outline-helper.webp" alt="Unit Outline Helper illustrated logo: a teal robot above the words Unit Outline Helper.">
+          <div class="card-body">
+            <div class="tag-row"><span class="tag accent">Academic staff</span><span class="tag">Curriculum</span></div>
+            <h3>Unit Outline Helper</h3>
+            <p>A curriculum-design agent for drafting Unit Learning Outcomes, assessment summaries and reviewing alignment across unit, course and professional learning frameworks.</p>
+            <div class="card-actions">
+              <a class="button" href="https://app.cogniti.ai/agents/67f70e091c9e6dbda3bff188/chat?k=mOeUxp0d-QwaXfagYEyuqWAgu6ZqF4NJyDWMoFuuBV8" target="_blank" rel="noopener">Launch Unit Outline Helper</a>
+              <a class="button ghost" href="#unit-outline">View resources</a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="resources">
+      <div class="section-heading">
+        <span class="eyebrow">Resources</span>
+        <h2>Guides, examples and curriculum tools</h2>
+        <p>The source resources supplied with this hub are retained in the repository so the page remains portable and independent of Notion or SharePoint.</p>
+      </div>
+
+      <div class="detail-grid">
+        <article class="detail-card" id="lexidraft">
+          <div class="detail-layout">
+            <img src="assets/lexidraft.webp" alt="LexiDraft logo.">
+            <div>
+              <div class="tag-row"><span class="tag accent">LexiDraft</span><span class="tag">Feedback & revision</span></div>
+              <h2>Strengthen legal writing without outsourcing the thinking</h2>
+              <p class="lead">LexiDraft acts as a high-level editor for students' existing writing. It can identify weaknesses in legal reasoning, clarity, structure and use of authority while keeping the student's analysis and final writing at the centre of the task.</p>
+              <ul class="feature-list">
+                <li>Evaluate whether writing answers the question clearly and legally.</li>
+                <li>Identify logical gaps, vague analysis and weak application of doctrine.</li>
+                <li>Review structure, academic tone, legal authority and referencing.</li>
+                <li>Support revision of essays, case notes, memos and problem-question responses.</li>
+              </ul>
+              <div class="resource-list">
+                <a class="resource-link" href="resources/lexidraft-legal-writing-resources.md" target="_blank">
+                  <strong>LexiDraft legal writing guide</strong>
+                  <span>Markdown · Student-facing guidance and examples</span>
+                </a>
+                <a class="resource-link" href="https://canvas.sydney.edu.au/courses/11474/pages/welcome-to-lexidraft?module_item_id=2681568" target="_blank" rel="noopener">
+                  <strong>Canvas guide</strong>
+                  <span>University-hosted LexiDraft support page</span>
+                </a>
+              </div>
+              <div class="notice"><strong>Data notice:</strong> do not enter personal, protected or highly protected data where the model is not deployed in an Australian geographic region.</div>
+            </div>
+          </div>
+        </article>
+
+        <article class="detail-card" id="chatgpt">
+          <div class="detail-layout">
+            <img src="assets/chatgpt5.webp" alt="ChatGPT5 for Sydney Law School logo.">
+            <div>
+              <div class="tag-row"><span class="tag accent">ChatGPT 5.4</span><span class="tag">Teaching workflow</span></div>
+              <h2>A flexible workspace for everyday legal education tasks</h2>
+              <p class="lead">Use the agent for rapid drafting and iteration where the task is low-risk and the output will be reviewed by an academic or professional staff member.</p>
+              <ul class="feature-list">
+                <li>Draft and refine assessment rubrics and marking guides.</li>
+                <li>Create realistic legal hypotheticals for tutorials and problem questions.</li>
+                <li>Generate formative questions, explanations and instructional material.</li>
+                <li>Transform quiz content into a Canvas-ready text2qti workflow.</li>
+              </ul>
+
+              <div class="resource-list">
+                <a class="resource-link" href="resources/chatgpt-quick-start-legacy.md" target="_blank">
+                  <strong>Quick-start guide</strong>
+                  <span>Markdown · Login, first prompts and practical tips</span>
+                </a>
+                <a class="resource-link" href="resources/build-a-rubric-legacy.md" target="_blank">
+                  <strong>Build a rubric</strong>
+                  <span>Markdown · Prompt structure and worked example</span>
+                </a>
+                <a class="resource-link" href="resources/creating-scenarios-legacy.md" target="_blank">
+                  <strong>Create legal scenarios</strong>
+                  <span>Markdown · Complexity, context and prompt template</span>
+                </a>
+                <a class="resource-link" href="resources/canvas-qti-quiz-legacy.md" target="_blank">
+                  <strong>Format a Canvas QTI quiz</strong>
+                  <span>Markdown · text2qti workflow and validation rules</span>
+                </a>
+              </div>
+
+              <div class="notice info"><strong>Model-name note:</strong> the current agent is presented as <strong>ChatGPT 5.4 for Sydney Law School</strong>. Several attached guides were authored for an earlier ChatGPT4o configuration and retain that historical naming; their workflow guidance has been preserved as supplied.</div>
+              <div class="notice"><strong>Limitations:</strong> treat the agent as a drafting workspace, not a search engine. Verify legal, policy and scholarly claims against authoritative sources before use.</div>
+            </div>
+          </div>
+        </article>
+
+        <article class="detail-card" id="unit-outline">
+          <div class="detail-layout">
+            <img src="assets/unit-outline-helper.webp" alt="Unit Outline Helper logo.">
+            <div>
+              <div class="tag-row"><span class="tag accent">Unit Outline Helper</span><span class="tag">AKARI & alignment</span></div>
+              <h2>Move from curriculum material to clearer unit-outline documentation</h2>
+              <p class="lead">Unit Outline Helper supports planning and review of unit learning outcomes and assessment summaries for Sydney Curriculum (AKARI), with additional curriculum-mapping functions.</p>
+              <ul class="feature-list">
+                <li>Draft or revise Unit Learning Outcomes (ULOs).</li>
+                <li>Draft assessment summaries for unit outlines.</li>
+                <li>Extract relevant curriculum information from existing text.</li>
+                <li>Review ULOs against Course Learning Outcomes, Sydney Graduate Qualities, AQF expectations and CALD Threshold Learning Outcomes.</li>
+                <li>Map assessments to ULOs using a 0–2 alignment scale and identify gaps or over-concentration.</li>
+              </ul>
+
+              <div class="resource-list">
+                <a class="resource-link" href="resources/unit-outline-helper.md" target="_blank">
+                  <strong>Unit Outline Helper guide</strong>
+                  <span>Markdown · Getting started, extraction and alignment prompts</span>
+                </a>
+                <a class="resource-link" href="resources/curriculum-mapping-methodologies.md" target="_blank">
+                  <strong>Curriculum Mapping Methodologies</strong>
+                  <span>Markdown · Assessment-to-ULO and framework mapping methodology</span>
+                </a>
+              </div>
+
+              <details>
+                <summary>Quick alignment prompt</summary>
+                <div class="details-inner">
+                  <p>After drafting ULOs and an assessment summary, ask:</p>
+                  <p><code>Create a matrix showing the alignment between ULOs and assessments in this unit.</code></p>
+                  <p>The supplied methodology uses a 0–2 scale: 0 = not addressed, 1 = partially addressed, and 2 = addressed.</p>
+                </div>
+              </details>
+
+              <div class="notice"><strong>Human review remains essential:</strong> confirm generated ULOs, assessment summaries and mapping judgements against current University curriculum requirements and the actual design of the unit.</div>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="support">
+      <div class="section-heading">
+        <span class="eyebrow">Related staff support tool</span>
+        <h2>AI Student Support Chatbot</h2>
+        <p>This tool is included separately because its purpose is student-support navigation rather than curriculum or teaching-content generation.</p>
+      </div>
+      <div class="support-card">
+        <h3>A first point of reference when a student may need non-academic support</h3>
+        <p>The AI Student Support Chatbot helps staff identify relevant University information and possible next actions when a student may be at risk or require non-academic assistance. It draws on the University’s <em>Red Book – Specialist Advice and Support for Students 2024</em>.</p>
+        <div class="card-actions">
+          <a class="button" href="https://bit.ly/AI_Student_Support" target="_blank" rel="noopener">Open Student Support Chatbot</a>
+          <a class="button ghost" href="https://intranet.sydney.edu.au/content/dam/intranet/documents/teaching-support/teaching-resources/red-book-specialist-advice-and-support-for-students-2024-final.pdf" target="_blank" rel="noopener">Open Red Book</a>
+        </div>
+        <div class="notice"><strong>Important:</strong> the chatbot is an information and navigation tool. It does not provide medical, psychological or diagnostic advice and does not replace professional judgement, specialist advice or emergency support.</div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <div>Sydney Law School · Educational Design · Cogniti Agent Hub</div>
+      <div>Need help? <a href="mailto:stafford.lumsden@sydney.edu.au">Contact Law Education Design</a></div>
+    </div>
+  </footer>
+</body>
+</html>
