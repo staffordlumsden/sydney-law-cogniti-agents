@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en-AU">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#2b2b2b">
+<title>Build a rubric · Sydney Law School Cogniti</title>
+<style>
+:root{--background:#2b2b2b;--surface:#000;--text:#fff;--muted:#d2d4d1;--border:#595959;--accent:#24cc8f;--warning:#fcaf3b;--near:#121212;--charcoal:#32373c;}
+*{box-sizing:border-box} body{margin:0;background:var(--background);color:var(--text);font-family:Arial,Helvetica,sans-serif;line-height:1.6}
+header{background:var(--near);border-bottom:1px solid var(--border)} .bar{max-width:1100px;margin:auto;padding:20px 25px;display:flex;gap:20px;align-items:center;justify-content:space-between}
+a{color:var(--accent)} .back{font-weight:700;text-decoration:none}.back:hover{text-decoration:underline}
+main{max-width:950px;margin:auto;padding:40px 25px 70px;background:var(--surface);min-height:100vh;border-left:1px solid var(--border);border-right:1px solid var(--border)}
+h1,h2,h3{font-family:"Jost",Arial,sans-serif;line-height:1.2} h1{font-size:3rem;margin:0 0 25px} h2{font-size:2rem;margin:45px 0 15px;border-top:1px solid var(--border);padding-top:25px} h3{font-size:1.35rem;margin:30px 0 10px}
+p,li{color:var(--muted)} strong{color:var(--text)} blockquote{margin:20px 0;padding:15px 20px;border-left:5px solid var(--warning);background:var(--near)}
+code{background:var(--charcoal);padding:2px 5px;border-radius:3px;color:var(--text)} pre{overflow:auto;background:var(--near);border:1px solid var(--border);padding:20px;border-radius:7px} pre code{background:transparent;padding:0}
+.table-wrap{overflow-x:auto;margin:20px 0} table{border-collapse:collapse;width:100%} th,td{border:1px solid var(--border);padding:10px 12px;text-align:left;vertical-align:top} th{background:var(--charcoal);color:var(--text)} td{color:var(--muted)}
+footer{max-width:950px;margin:auto;padding:20px 25px;color:#566e8b;font-size:.875rem}
+@media(max-width:650px){h1{font-size:2.2rem}h2{font-size:1.6rem}main{padding:30px 20px 50px;border:0}.bar{padding:15px 20px}}
+</style>
+</head>
+<body>
+<header><div class="bar"><a class="back" href="../index.html">← Cogniti Agent Hub</a><span>Sydney Law School · Educational Design</span></div></header>
+<main><h1>Build a Rubric with ChatGPT 5.4 for Sydney Law School</h1>
+<p>This guide updates the supplied ChatGPT4o rubric workflow for the current <strong>ChatGPT 5.4 for Sydney Law School</strong> agent. The underlying prompting sequence remains useful: establish the educational context, describe the task, specify the rubric structure, define the assessment focus and require a concise output.</p>
+<h2>Step 1: State the educator context</h2>
+<p>Tell the agent who you are and what you are designing.</p>
+<blockquote>
+<p>I am a legal educator designing a rubric for a law school assessment task.</p>
+</blockquote>
+<h2>Step 2: Describe the assessment task</h2>
+<p>Specify what students must produce, including relevant format, word length, level and subject matter.</p>
+<blockquote>
+<p>The task requires students to write a 3,000-word legal research essay on discrimination law.</p>
+</blockquote>
+<p>Useful details include:</p>
+<ul>
+<li>task type;</li>
+<li>word or time limit;</li>
+<li>year level or award level;</li>
+<li>relevant area of law;</li>
+<li>Unit Learning Outcomes or capabilities being assessed; and</li>
+<li>any mandatory task requirements.</li>
+</ul>
+<h2>Step 3: Specify the number of criteria</h2>
+<p>State the approximate number of criteria you want. The supplied workflow recommends keeping the rubric manageable rather than proliferating criteria.</p>
+<blockquote>
+<p>Please generate a simple, clear rubric with four criteria.</p>
+</blockquote>
+<h2>Step 4: Specify format, tone and audience</h2>
+<p>Ask for descriptors that students and markers can use readily.</p>
+<blockquote>
+<p>Each criterion should include a concise descriptor suitable for postgraduate law students. Use plain English and an academic but accessible tone.</p>
+</blockquote>
+<h2>Step 5: Define the assessment focus</h2>
+<p>Use the task requirements and learning outcomes to specify what the rubric should assess.</p>
+<p>Common areas include:</p>
+<ul>
+<li>legal research and referencing;</li>
+<li>critical analysis;</li>
+<li>legal reasoning and argumentation;</li>
+<li>use of case law and legislation;</li>
+<li>structure and coherence; and</li>
+<li>written expression.</li>
+</ul>
+<blockquote>
+<p>Criteria should reflect legal research skills, legal reasoning, structure and coherence, and use of legal authority.</p>
+</blockquote>
+<h2>Step 6: Specify the output</h2>
+<p>Tell the agent to keep the rubric concise and provide it in a practical format.</p>
+<blockquote>
+<p>Keep the rubric concise for easy marking and student understanding. Present it as a table.</p>
+</blockquote>
+<h2>Combined prompt</h2>
+<pre><code>I am a legal educator designing a rubric for a law school assessment task.
+
+The task requires students to write a 3,000-word legal research essay on discrimination law.
+
+Please generate a clear rubric with four criteria. Each criterion should include a concise descriptor suitable for postgraduate law students. Use plain English and keep the tone academic but accessible.
+
+The criteria should reflect:
+- legal research skills;
+- legal reasoning;
+- structure and coherence; and
+- use of legal authority.
+
+Keep the rubric concise for easy marking and student understanding. Present it as a table.</code></pre>
+<h2>Before adopting the output</h2>
+<p>Check that the proposed criteria:</p>
+<ul>
+<li>assess what the task actually requires students to demonstrate;</li>
+<li>align with the relevant Unit Learning Outcomes;</li>
+<li>are sufficiently distinct from one another;</li>
+<li>use observable language;</li>
+<li>are proportionate to the weighting and complexity of the task; and</li>
+<li>can be applied consistently by markers.</li>
+</ul>
+<p>The agent should support rubric development, not determine the final assessment standard.</p></main>
+<footer>Local repository resource · no external documentation required</footer>
+</body>
+</html>
