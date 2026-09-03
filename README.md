@@ -5,16 +5,18 @@ A static GitHub Pages site bringing together Sydney Law School Cogniti agents an
 ## Site contents
 
 - `index.html` — standalone responsive landing page
-- supplied agent artwork is embedded directly into `index.html` for a genuinely standalone page
+- `assets/` — supplied Cogniti agent artwork
 - `resources/` — supplied guides and web-readable curriculum-mapping resources
 - `DESIGN.md` — design-system specification used for the page
-- `.github/workflows/pages.yml` — optional GitHub Pages deployment workflow
+- `.nojekyll` — ensures GitHub Pages serves the site as plain static content
 
 ## Publishing on GitHub Pages
 
-This repository is configured as a static GitHub Pages site. The included workflow deploys the root of the `main` branch using GitHub Actions. If Pages has not yet been enabled for the repository, open **Settings → Pages** and set the source to **GitHub Actions**.
+This repository is published directly from the `main` branch, root folder (`/(root)`), using GitHub Pages. The site requires no build step or custom GitHub Actions workflow.
 
-The static page itself requires no build step.
+Public site:
+
+https://staffordlumsden.github.io/sydney-law-cogniti-agents/
 
 ## Content note
 
