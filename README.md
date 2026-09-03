@@ -1,23 +1,52 @@
 # Sydney Law School Cogniti Agent Hub
 
-A static GitHub Pages site bringing together Sydney Law School Cogniti agents and practical resources for legal education.
+A self-contained GitHub Pages site bringing together Sydney Law School Cogniti agents and practical resources for legal education.
 
-## Site contents
-
-- `index.html` — standalone responsive landing page
-- `assets/` — supplied Cogniti agent artwork
-- `resources/` — supplied guides and web-readable curriculum-mapping resources
-- `DESIGN.md` — design-system specification used for the page
-- `.nojekyll` — ensures GitHub Pages serves the site as plain static content
-
-## Publishing on GitHub Pages
-
-This repository is published directly from the `main` branch, root folder (`/(root)`), using GitHub Pages. The site requires no build step or custom GitHub Actions workflow.
-
-Public site:
+## Public site
 
 https://staffordlumsden.github.io/sydney-law-cogniti-agents/
 
-## Content note
+## Current tools represented
 
-The active general-purpose agent is labelled **ChatGPT 5.4 for Sydney Law School**. Some supplied guides were authored for an earlier ChatGPT4o configuration and are retained as legacy workflow resources; their historical model naming has not been silently rewritten.
+- **LexiDraft** — legal-writing feedback and revision for Honours and selected capstone contexts.
+- **ChatGPT 5.4 for Sydney Law School** — the current general-purpose staff Cogniti agent for low-risk teaching, curriculum and administrative tasks.
+- **Unit Outline Helper** — ULO, assessment-summary and curriculum-alignment support for Sydney Curriculum (AKARI).
+- **AI Student Support Chatbot** — a related staff-support navigation tool.
+
+## Local resource library
+
+All supporting guidance is stored within this repository and has a matching web-readable page under `resources/`.
+
+- `resources/lexidraft.html`
+- `resources/chatgpt-5-4-quick-start.html`
+- `resources/build-a-rubric.html`
+- `resources/creating-legal-scenarios.html`
+- `resources/canvas-qti-quiz.html`
+- `resources/unit-outline-helper.html`
+- `resources/curriculum-mapping-methodologies.html`
+- `resources/ai-student-support-chatbot.html`
+- `resources/overview.html`
+
+Markdown source versions are stored alongside the HTML pages so the guidance is readable directly in GitHub as well as on GitHub Pages.
+
+## Current-version policy
+
+Earlier supplied materials referred to **ChatGPT4o** and, in places, **o3-mini**. The current general-purpose staff guidance has been updated to **ChatGPT 5.4 for Sydney Law School** while preserving the useful workflows in the source material.
+
+The supplied Unit Outline Helper guide also identified an earlier ChatGPT4o configuration. Because the current underlying model for Unit Outline Helper is not stated in the supplied materials, the updated resource does **not** invent a replacement model name; it refers to the current tool as **Unit Outline Helper**.
+
+## External-link policy
+
+Documentation and supporting resources do not depend on Notion, Canvas, SharePoint or other external resource pages. The only outbound links intentionally retained on the main site are links that **launch the actual Cogniti tools** (and the Student Support chatbot), rather than links to supporting documentation.
+
+## Site structure
+
+- `index.html` — responsive hub page
+- `assets/` — supplied agent artwork
+- `resources/` — current local HTML and Markdown guidance
+- `DESIGN.md` — design-system specification
+- `.nojekyll` — serves the site as plain static content
+
+## GitHub Pages
+
+The repository publishes directly from the `main` branch, root folder (`/(root)`). No custom build step is required.
