@@ -4,26 +4,57 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Sydney Law School Cogniti agents and practical resources for legal education.">
-  <meta name="theme-color" content="#2b2b2b">
+  <meta name="theme-color" id="theme-color" content="#ededed">
+  <script>
+    try {
+      if (localStorage.getItem("cogniti-theme") === "dark") {
+        document.documentElement.dataset.theme = "dark";
+      }
+    } catch (e) {}
+  </script>
   <title>Sydney Law School · Cogniti Agent Hub</title>
   <style>
     :root {
+      color-scheme: light;
+      --background: #ededed;
+      --surface: #ffffff;
+      --text-primary: #121212;
+      --text-muted: #566e8b;
+      --border: #d2d4d1;
+      --accent: #24cc8f;
+      --accent-text: #566e8b;
+      --success: #00b682;
+      --warning: #ab641d;
+      --info: #528ffe;
+      --header: #ffffff;
+      --subtle: #ededed;
+      --secondary-text: #32373c;
+      --chip-bg: #ededed;
+      --image-bg: #ededed;
+      --code-bg: #ededed;
+      --shadow-raised: rgba(0, 0, 0, 0.1) 0px 3px 6px -5px, rgba(0, 0, 0, 0.1) 0px 4px 8px 0px;
+      --shadow-top: rgba(0, 0, 0, 0.1) 0px -1px 3px 0px;
+      --shadow-overlay: rgba(40, 47, 98, 0.08) 0px 10px 100px 0px;
+    }
+
+    html[data-theme="dark"] {
+      color-scheme: dark;
       --background: #2b2b2b;
       --surface: #000000;
       --text-primary: #ffffff;
       --text-muted: #566e8b;
       --border: #595959;
       --accent: #24cc8f;
+      --accent-text: #24cc8f;
       --success: #00b682;
       --warning: #fcaf3b;
       --info: #528ffe;
-      --near-black: #121212;
-      --light: #ededed;
-      --charcoal: #32373c;
-      --soft: #d2d4d1;
-      --shadow-raised: rgba(0, 0, 0, 0.1) 0px 3px 6px -5px, rgba(0, 0, 0, 0.1) 0px 4px 8px 0px;
-      --shadow-top: rgba(0, 0, 0, 0.1) 0px -1px 3px 0px;
-      --shadow-overlay: rgba(40, 47, 98, 0.08) 0px 10px 100px 0px;
+      --header: #121212;
+      --subtle: #121212;
+      --secondary-text: #d2d4d1;
+      --chip-bg: #32373c;
+      --image-bg: #ededed;
+      --code-bg: #121212;
     }
 
     * { box-sizing: border-box; }
@@ -37,7 +68,7 @@
       line-height: 1.5;
     }
 
-    a { color: var(--accent); }
+    a { color: var(--accent-text); }
     a:focus-visible, button:focus-visible, summary:focus-visible {
       outline: 2px solid var(--accent);
       outline-offset: 3px;
@@ -68,7 +99,7 @@
 
     .site-header {
       border-bottom: 1px solid var(--border);
-      background: var(--near-black);
+      background: var(--header);
       box-shadow: var(--shadow-top);
     }
     .header-inner {
@@ -87,10 +118,34 @@
       font-weight: 700;
       letter-spacing: .01em;
     }
-    .brand span { color: var(--accent); }
+    .brand span { color: var(--accent-text); }
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
     .nav { display: flex; flex-wrap: wrap; gap: 20px; }
-    .nav a { color: var(--light); text-decoration: none; font-weight: 700; }
-    .nav a:hover { color: var(--accent); }
+    .nav a { color: var(--secondary-text); text-decoration: none; font-weight: 700; }
+    .nav a:hover { color: var(--accent-text); }
+
+    .theme-toggle {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      min-height: 40px;
+      padding: 5px 15px;
+      border: 1px solid var(--border);
+      border-radius: 50px;
+      background: var(--surface);
+      color: var(--text-primary);
+      font: inherit;
+      font-weight: 700;
+      cursor: pointer;
+      box-shadow: var(--shadow-raised);
+    }
+    .theme-toggle:hover { border-color: var(--accent); }
+    .theme-toggle-icon { color: var(--accent-text); font-size: 1rem; }
 
     main { max-width: 1280px; margin: 0 auto; padding: 50px 25px 60px; }
 
@@ -104,13 +159,13 @@
     .eyebrow {
       display: inline-block;
       margin-bottom: 15px;
-      color: var(--accent);
+      color: var(--accent-text);
       font-size: .75rem;
       font-weight: 700;
       letter-spacing: .12em;
       text-transform: uppercase;
     }
-    .hero-copy { max-width: 800px; font-size: 1.125rem; color: var(--light); }
+    .hero-copy { max-width: 800px; font-size: 1.125rem; color: var(--secondary-text); }
     .hero-panel {
       background: var(--surface);
       border: 1px solid var(--border);
@@ -123,7 +178,7 @@
 
     .section { margin-top: 50px; }
     .section-heading { max-width: 800px; margin-bottom: 25px; }
-    .section-heading p { color: var(--soft); }
+    .section-heading p { color: var(--secondary-text); }
 
     .agent-grid {
       display: grid;
@@ -144,7 +199,7 @@
       width: 100%;
       aspect-ratio: 1 / 1;
       object-fit: cover;
-      background: var(--light);
+      background: var(--image-bg);
       border-bottom: 1px solid var(--border);
     }
     .card-body { padding: 20px; display: flex; flex-direction: column; flex: 1; }
@@ -158,11 +213,11 @@
       border-radius: 50px;
       font-size: .75rem;
       font-weight: 700;
-      color: var(--soft);
-      background: var(--charcoal);
+      color: var(--secondary-text);
+      background: var(--chip-bg);
     }
-    .tag.accent { border-color: var(--accent); color: var(--accent); background: var(--near-black); }
-    .card-body p { color: var(--soft); }
+    .tag.accent { border-color: var(--accent-text); color: var(--accent-text); background: var(--subtle); }
+    .card-body p { color: var(--secondary-text); }
     .card-actions { margin-top: auto; padding-top: 10px; display: flex; flex-wrap: wrap; gap: 10px; }
 
     .button {
@@ -179,8 +234,8 @@
       font-weight: 700;
     }
     .button:hover { opacity: .9; }
-    .button.ghost { background: transparent; color: var(--accent); border-color: var(--border); }
-    .button.ghost:hover { border-color: var(--accent); opacity: 1; }
+    .button.ghost { background: transparent; color: var(--accent-text); border-color: var(--border); }
+    .button.ghost:hover { border-color: var(--accent-text); opacity: 1; }
 
     .detail-grid { display: grid; gap: 20px; }
     .detail-card {
@@ -200,9 +255,9 @@
       width: 100%;
       border-radius: 7px;
       border: 1px solid var(--border);
-      background: var(--light);
+      background: var(--image-bg);
     }
-    .lead { color: var(--light); font-size: 1.1rem; }
+    .lead { color: var(--secondary-text); font-size: 1.1rem; }
     .feature-list { padding-left: 20px; margin: 15px 0 20px; }
     .feature-list li { margin-bottom: 5px; }
 
@@ -210,15 +265,15 @@
       margin-top: 20px;
       padding: 15px 20px;
       border-left: 5px solid var(--warning);
-      background: var(--near-black);
-      color: var(--light);
+      background: var(--subtle);
+      color: var(--secondary-text);
     }
     .notice.info { border-left-color: var(--info); }
     .notice.success { border-left-color: var(--success); }
 
     .resource-list {
       display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
       gap: 10px;
       margin-top: 20px;
     }
@@ -231,9 +286,9 @@
       color: var(--text-primary);
       text-decoration: none;
     }
-    .resource-link:hover { border-color: var(--accent); }
-    .resource-link strong { display: block; color: var(--accent); margin-bottom: 5px; }
-    .resource-link span { display: block; color: var(--soft); font-size: .875rem; }
+    .resource-link:hover { border-color: var(--accent-text); }
+    .resource-link strong { display: block; color: var(--accent-text); margin-bottom: 5px; }
+    .resource-link span { display: block; color: var(--secondary-text); font-size: .875rem; }
 
     details {
       margin-top: 20px;
@@ -244,16 +299,16 @@
     summary {
       cursor: pointer;
       padding: 15px 20px;
-      color: var(--accent);
+      color: var(--accent-text);
       font-weight: 700;
     }
-    .details-inner { padding: 0 20px 20px; color: var(--light); }
+    .details-inner { padding: 0 20px 20px; color: var(--secondary-text); }
     code {
-      background: var(--near-black);
+      background: var(--header);
       border: 1px solid var(--border);
       border-radius: 3px;
       padding: 2px 5px;
-      color: var(--light);
+      color: var(--secondary-text);
     }
 
     .support-card {
@@ -266,7 +321,7 @@
 
     footer {
       border-top: 1px solid var(--border);
-      background: var(--near-black);
+      background: var(--header);
     }
     .footer-inner {
       max-width: 1280px;
@@ -279,7 +334,7 @@
       color: var(--text-muted);
       font-size: .875rem;
     }
-    .footer-inner a { color: var(--accent); }
+    .footer-inner a { color: var(--accent-text); }
 
     @media (max-width: 900px) {
       .hero { grid-template-columns: 1fr; }
@@ -291,6 +346,7 @@
       h2 { font-size: 1.75rem; }
       main { padding: 30px 20px 50px; }
       .header-inner { padding: 15px 20px; align-items: flex-start; flex-direction: column; }
+      .header-actions { width: 100%; justify-content: space-between; }
       .nav { gap: 15px; }
       .hero { padding: 25px 0 40px; }
       .agent-grid, .resource-list, .detail-layout { grid-template-columns: 1fr; }
@@ -304,11 +360,17 @@
   <header class="site-header">
     <div class="header-inner">
       <a class="brand" href="#top">Sydney Law School <span>· Cogniti</span></a>
-      <nav class="nav" aria-label="Primary navigation">
-        <a href="#agents">Agents</a>
-        <a href="#resources">Resources</a>
-        <a href="#support">Student support</a>
-      </nav>
+      <div class="header-actions">
+        <nav class="nav" aria-label="Primary navigation">
+          <a href="#agents">Agents</a>
+          <a href="#resources">Resources</a>
+          <a href="#support">Student support</a>
+        </nav>
+        <button class="theme-toggle" id="theme-toggle" type="button" aria-pressed="false" aria-label="Switch to dark mode">
+          <span class="theme-toggle-icon" id="theme-icon" aria-hidden="true">☾</span>
+          <span id="theme-label">Dark mode</span>
+        </button>
+      </div>
     </div>
   </header>
 
@@ -318,7 +380,6 @@
         <span class="eyebrow">Sydney Law School · Educational Design</span>
         <h1>Cogniti agents for legal education</h1>
         <p class="hero-copy">Purpose-built AI tools and practical resources for Sydney Law School academics. Use this hub to launch an agent, understand what it is designed to do, and access the accompanying guides and examples. All documentation is hosted locally in this repository.</p>
-        <div class="card-actions"><a class="button ghost" href="resources/overview.html">Read the current resource overview</a></div>
       </div>
       <aside class="hero-panel" aria-label="Important use note">
         <p><strong>Use professional judgement.</strong> These tools augment human-led teaching, curriculum design and student support. Review outputs before using or sharing them.</p>
@@ -400,10 +461,6 @@
                 <a class="resource-link" href="resources/lexidraft.html">
                   <strong>LexiDraft legal writing guide</strong>
                   <span>Local guide · role, use cases, prompt example and safeguards</span>
-                </a>
-                <a class="resource-link" href="resources/overview.html">
-                  <strong>Current resource overview</strong>
-                  <span>Local guide · current tool names, versions and scope</span>
                 </a>
               </div>
               <div class="notice"><strong>Data notice:</strong> do not enter personal, protected or highly protected data where the model is not deployed in an Australian geographic region.</div>
@@ -517,5 +574,42 @@
       <div>Need help? <a href="mailto:stafford.lumsden@sydney.edu.au">Contact Law Education Design</a></div>
     </div>
   </footer>
+  <script>
+    (function () {
+      const root = document.documentElement;
+      const toggle = document.getElementById("theme-toggle");
+      const label = document.getElementById("theme-label");
+      const icon = document.getElementById("theme-icon");
+      const themeColour = document.getElementById("theme-color");
+
+      function currentTheme() {
+        return root.dataset.theme === "dark" ? "dark" : "light";
+      }
+
+      function applyTheme(theme, persist) {
+        if (theme === "dark") {
+          root.dataset.theme = "dark";
+        } else {
+          delete root.dataset.theme;
+        }
+
+        const dark = theme === "dark";
+        toggle.setAttribute("aria-pressed", String(dark));
+        toggle.setAttribute("aria-label", dark ? "Switch to light mode" : "Switch to dark mode");
+        label.textContent = dark ? "Light mode" : "Dark mode";
+        icon.textContent = dark ? "☀" : "☾";
+        themeColour.setAttribute("content", dark ? "#2b2b2b" : "#ededed");
+
+        if (persist) {
+          try { localStorage.setItem("cogniti-theme", theme); } catch (e) {}
+        }
+      }
+
+      applyTheme(currentTheme(), false);
+      toggle.addEventListener("click", function () {
+        applyTheme(currentTheme() === "dark" ? "light" : "dark", true);
+      });
+    }());
+  </script>
 </body>
 </html>
