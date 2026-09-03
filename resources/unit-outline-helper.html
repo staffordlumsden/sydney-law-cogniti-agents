@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en-AU">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#2b2b2b">
+<title>Unit Outline Helper · Sydney Law School Cogniti</title>
+<style>
+:root{--background:#2b2b2b;--surface:#000;--text:#fff;--muted:#d2d4d1;--border:#595959;--accent:#24cc8f;--warning:#fcaf3b;--near:#121212;--charcoal:#32373c;}
+*{box-sizing:border-box} body{margin:0;background:var(--background);color:var(--text);font-family:Arial,Helvetica,sans-serif;line-height:1.6}
+header{background:var(--near);border-bottom:1px solid var(--border)} .bar{max-width:1100px;margin:auto;padding:20px 25px;display:flex;gap:20px;align-items:center;justify-content:space-between}
+a{color:var(--accent)} .back{font-weight:700;text-decoration:none}.back:hover{text-decoration:underline}
+main{max-width:950px;margin:auto;padding:40px 25px 70px;background:var(--surface);min-height:100vh;border-left:1px solid var(--border);border-right:1px solid var(--border)}
+h1,h2,h3{font-family:"Jost",Arial,sans-serif;line-height:1.2} h1{font-size:3rem;margin:0 0 25px} h2{font-size:2rem;margin:45px 0 15px;border-top:1px solid var(--border);padding-top:25px} h3{font-size:1.35rem;margin:30px 0 10px}
+p,li{color:var(--muted)} strong{color:var(--text)} blockquote{margin:20px 0;padding:15px 20px;border-left:5px solid var(--warning);background:var(--near)}
+code{background:var(--charcoal);padding:2px 5px;border-radius:3px;color:var(--text)} pre{overflow:auto;background:var(--near);border:1px solid var(--border);padding:20px;border-radius:7px} pre code{background:transparent;padding:0}
+.table-wrap{overflow-x:auto;margin:20px 0} table{border-collapse:collapse;width:100%} th,td{border:1px solid var(--border);padding:10px 12px;text-align:left;vertical-align:top} th{background:var(--charcoal);color:var(--text)} td{color:var(--muted)}
+footer{max-width:950px;margin:auto;padding:20px 25px;color:#566e8b;font-size:.875rem}
+@media(max-width:650px){h1{font-size:2.2rem}h2{font-size:1.6rem}main{padding:30px 20px 50px;border:0}.bar{padding:15px 20px}}
+</style>
+</head>
+<body>
+<header><div class="bar"><a class="back" href="../index.html">← Cogniti Agent Hub</a><span>Sydney Law School · Educational Design</span></div></header>
+<main><h1>Unit Outline Helper</h1>
+<p><strong>Current iteration:</strong> Unit Outline Helper v1.2_29042025  </p>
+<p><strong>Audience:</strong> Sydney Law School academic and professional staff  </p>
+<p><strong>Platform:</strong> Cogniti</p>
+<p>The supplied 2025 guide identified an earlier ChatGPT4o configuration. The current resource does not hard-code an underlying model because the current model configuration is not stated in the supplied materials. The tool itself remains <strong>Unit Outline Helper</strong>.</p>
+<h2>What Unit Outline Helper can do</h2>
+<p>The agent can:</p>
+<ol>
+<li>draft or revise <strong>Unit Learning Outcomes (ULOs)</strong>;</li>
+<li>draft or revise an <strong>assessment summary</strong> for Sydney Curriculum (AKARI);</li>
+<li>extract relevant ULO or assessment information from existing text;</li>
+<li>analyse ULOs against:</li>
+</ol>
+<ul>
+<li>Course Learning Outcomes (CLOs);</li>
+<li>Sydney University Graduate Qualities;</li>
+<li>Australian Qualifications Framework expectations, especially Level 9 where relevant; and</li>
+<li>Council of Australian Law Deans Threshold Learning Outcomes for the LLB and JD; and</li>
+</ul>
+<ol>
+<li>analyse alignment between assessments and ULOs.</li>
+</ol>
+<p>You can work through these tasks individually or ask the agent to combine them.</p>
+<h2>Getting started</h2>
+<p>The agent may begin by asking which task you want to complete:</p>
+<ol>
+<li>Write new ULOs.</li>
+<li>Write a new assessment summary.</li>
+<li>Write both ULOs and an assessment summary.</li>
+<li>Extract ULO information from existing text and create new ULOs.</li>
+<li>Extract assessment information from existing text and create an assessment summary.</li>
+</ol>
+<p>You can reply with the relevant number or describe the task directly.</p>
+<h2>Using existing unit material</h2>
+<p>You can paste existing material from a unit outline, handbook entry or curriculum document into the agent and ask it to extract and reorganise the information.</p>
+<p>A direct prompt can be as simple as:</p>
+<pre><code>Analyse the following text:
+
+"""
+[paste the existing ULOs, assessment summary or unit material here]
+"""
+
+Create a new set of Unit Learning Outcomes in the required format.</code></pre>
+<p>For an assessment summary, replace the final instruction with:</p>
+<pre><code>Create a new assessment summary in the required format.</code></pre>
+<p>In this context, <strong>required format</strong> means the output format configured for the agent. Staff should still check that the result satisfies current University curriculum requirements.</p>
+<h2>Checking constructive alignment</h2>
+<p>After drafting ULOs and an assessment summary, ask:</p>
+<pre><code>Create a matrix showing the alignment between ULOs and assessments in this unit.</code></pre>
+<p>The supplied methodology uses a 0–2 scale:</p>
+<ul>
+<li><strong>0</strong> = ULO not addressed;</li>
+<li><strong>1</strong> = ULO partially addressed;</li>
+<li><strong>2</strong> = ULO addressed.</li>
+</ul>
+<p>The analysis considers the unit title, description, ULOs and assessment summary to evaluate the extent to which the assessment design gives students opportunities to demonstrate the intended outcomes.</p>
+<h2>Broader curriculum mapping</h2>
+<p>The supplied curriculum-mapping methodology extends the analysis by considering:</p>
+<ul>
+<li>the purpose and nature of each assessment;</li>
+<li>expected student outputs;</li>
+<li>formative/summative and individual/collaborative characteristics;</li>
+<li>correspondence between assessment demands and ULO verbs;</li>
+<li>full or partial coverage of each ULO;</li>
+<li>gaps or over-concentration across the assessment suite;</li>
+<li>assessment weighting where appropriate; and</li>
+<li>consistency with relevant educational and professional frameworks.</li>
+</ul>
+<p>The detailed methodology is reproduced in <code>resources/curriculum-mapping-methodologies.md</code> and on the main GitHub Pages site.</p>
+<h2>Human review</h2>
+<p>Generated ULOs, assessment summaries and mapping judgements are draft curriculum-development artefacts. They should be checked against current University curriculum requirements, the actual design of the unit and any relevant course or accreditation requirements.</p>
+<p>Do not enter personal, protected or highly protected data where the model is not deployed in an Australian geographic region.</p></main>
+<footer>Local repository resource · no external documentation required</footer>
+</body>
+</html>
