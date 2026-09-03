@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en-AU">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#2b2b2b">
+<title>Format a Canvas QTI quiz · Sydney Law School Cogniti</title>
+<style>
+:root{--background:#2b2b2b;--surface:#000;--text:#fff;--muted:#d2d4d1;--border:#595959;--accent:#24cc8f;--warning:#fcaf3b;--near:#121212;--charcoal:#32373c;}
+*{box-sizing:border-box} body{margin:0;background:var(--background);color:var(--text);font-family:Arial,Helvetica,sans-serif;line-height:1.6}
+header{background:var(--near);border-bottom:1px solid var(--border)} .bar{max-width:1100px;margin:auto;padding:20px 25px;display:flex;gap:20px;align-items:center;justify-content:space-between}
+a{color:var(--accent)} .back{font-weight:700;text-decoration:none}.back:hover{text-decoration:underline}
+main{max-width:950px;margin:auto;padding:40px 25px 70px;background:var(--surface);min-height:100vh;border-left:1px solid var(--border);border-right:1px solid var(--border)}
+h1,h2,h3{font-family:"Jost",Arial,sans-serif;line-height:1.2} h1{font-size:3rem;margin:0 0 25px} h2{font-size:2rem;margin:45px 0 15px;border-top:1px solid var(--border);padding-top:25px} h3{font-size:1.35rem;margin:30px 0 10px}
+p,li{color:var(--muted)} strong{color:var(--text)} blockquote{margin:20px 0;padding:15px 20px;border-left:5px solid var(--warning);background:var(--near)}
+code{background:var(--charcoal);padding:2px 5px;border-radius:3px;color:var(--text)} pre{overflow:auto;background:var(--near);border:1px solid var(--border);padding:20px;border-radius:7px} pre code{background:transparent;padding:0}
+.table-wrap{overflow-x:auto;margin:20px 0} table{border-collapse:collapse;width:100%} th,td{border:1px solid var(--border);padding:10px 12px;text-align:left;vertical-align:top} th{background:var(--charcoal);color:var(--text)} td{color:var(--muted)}
+footer{max-width:950px;margin:auto;padding:20px 25px;color:#566e8b;font-size:.875rem}
+@media(max-width:650px){h1{font-size:2.2rem}h2{font-size:1.6rem}main{padding:30px 20px 50px;border:0}.bar{padding:15px 20px}}
+</style>
+</head>
+<body>
+<header><div class="bar"><a class="back" href="../index.html">← Cogniti Agent Hub</a><span>Sydney Law School · Educational Design</span></div></header>
+<main><h1>Format a Canvas QTI Quiz with ChatGPT 5.4 for Sydney Law School</h1>
+<p>This guide updates the supplied ChatGPT4o workflow for the current <strong>ChatGPT 5.4 for Sydney Law School</strong> agent. It is designed to help convert bulk multiple-choice or multiple-response quiz material into plain-text <strong>text2qti / QTI v1.2</strong> syntax for later import into Canvas.</p>
+<h2>Step 1: Prepare the raw quiz content</h2>
+<p>Include:</p>
+<ol>
+<li><strong>Quiz title</strong> and <strong>quiz description</strong>.</li>
+<li>For each question:</li>
+</ol>
+<ul>
+<li>a short <strong>question title</strong>;</li>
+<li><strong>points</strong>;</li>
+<li>the <strong>question text</strong>;</li>
+<li>all answer choices labelled <code>a)</code>, <code>b)</code>, etc.;</li>
+<li>the correct answer(s); and</li>
+<li>feedback for each answer where required.</li>
+</ul>
+<h2>Step 2: Use this transformation prompt</h2>
+<pre><code>Create a quiz to forward to an Educational Designer for importing into Canvas.
+
+Help instructors create Canvas-compatible quizzes by producing plain-text files in the text2qti (QTI v1.2) format.
+
+## Step 1. Elicit user input
+Ask the user to paste the complete quiz content, including all questions, answer choices and feedback.
+
+## Step 2. Gather quiz metadata
+If not present, ask for:
+- Quiz title
+- Quiz description
+
+## Step 3. Parse each question
+For each question identify:
+- Question Title
+- Points
+- Question text
+- All answer choices labelled a), b), etc.
+- Which choice is correct
+- Feedback for every choice
+
+## Step 4. Transform
+- Convert all inputs into text2qti syntax.
+- Put Title and Points before the numbered question.
+- Use [ ] / [*] notation for multiple-response questions.
+- For single-response questions, indicate the correct answer with a leading *.
+- Preserve the user's wording unless a formatting change is required.
+
+Example:
+
+Quiz title: Addition
+Quiz description: Checking addition.
+
+Title: An addition question
+Points: 2
+1. What is 2+3?
+a) 6
+... Feedback for this answer.
+b) 1
+... Feedback for this answer.
+*c) 5
+... Feedback for the correct answer.
+
+## Step 5. Final output
+First output this note outside the code block:
+
+⚠️ Note: Copy and paste the text below into a plain-text editor and save it as a .txt file with Unicode (UTF-8) encoding.
+
+Then output the complete quiz in one plain-text code block.
+
+Always:
+- validate numbering and lettering;
+- validate Title and Points placement;
+- validate correct-answer markers;
+- keep the explanatory note outside the code block; and
+- ask for clarification where required information is missing.</code></pre>
+<h2>Step 3: Review the parsed content</h2>
+<p>The agent may need you to confirm ambiguous answer keys, question metadata or feedback. Resolve those ambiguities before using the formatted output.</p>
+<h2>Step 4: Check the returned syntax</h2>
+<p>The output should contain:</p>
+<ul>
+<li>the quiz title and description;</li>
+<li>each question in sequence;</li>
+<li>question title and points before the question;</li>
+<li>appropriate correct-answer markers; and</li>
+<li>feedback lines prefixed with <code>...</code> where feedback is being used.</li>
+</ul>
+<h2>Step 5: Save and import</h2>
+<ol>
+<li>Copy the complete code block.</li>
+<li>Paste it into a plain-text editor.</li>
+<li>Save the file as <code>.txt</code> using UTF-8 encoding.</li>
+<li>Pass the file through the established text2qti/QTI import workflow for Canvas.</li>
+</ol>
+<h2>Validation reminders</h2>
+<ul>
+<li>Check every correct answer marker manually.</li>
+<li>Check that answer order has not changed unexpectedly.</li>
+<li>Check points and question numbering.</li>
+<li>Check multiple-response notation carefully.</li>
+<li>Keep the source quiz as the authoritative version until the imported Canvas quiz has been reviewed.</li>
+</ul></main>
+<footer>Local repository resource · no external documentation required</footer>
+</body>
+</html>
